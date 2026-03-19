@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#e8e8e8"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#888">Image placeholder</text>
+  <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#aaa">Add file to images/ folder</text>
+</svg>
