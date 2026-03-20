@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+    <meta charset="UTF-8">
+
+{% seo %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header{% if page.cayman_minimal_header %} page-header--minimal{% endif %}" role="banner">
+      {% if page.cayman_minimal_header %}
+        <p class="project-name project-name--compact"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
+        <p class="project-game-title">{{ page.title }}</p>
+        <p class="project-tagline project-tagline--compact">{{ page.banner_tagline | default: "Full version free for Windows · Direct download" }}</p>
+      {% else %}
+        <h1 class="project-name">{{ page.banner_title | default: page.title | default: site.title }}</h1>
+        <h2 class="project-tagline">{{ page.banner_tagline | default: page.description | default: site.description }}</h2>
+      {% endif %}
+
+      <div class="header-cta">
+        <a href="{{ '/downloads.html' | relative_url }}" class="btn">Downloads</a>
+        <a href="{{ '/about-nology-games.html' | relative_url }}" class="btn">About</a>
+        {% if site.github.is_project_page %}
+          <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+        {% endif %}
+      </div>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      {% include nav.html %}
+      {{ content }}
+
+      <footer class="site-footer">
+        {% include footer.html %}
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+# Jekyll — GitHub Pages (project site: /Nology-Games/)
+title: Nology Games
+description: Former Brazilian game studio — casual games for Windows, free to download.
+baseurl: "/Nology-Games"
+url: ""
+
+remote_theme: pages-themes/cayman
+show_downloads: false
+
+markdown: kramdown
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - MIGRATION.md
+  - vendor

@@ -17,17 +17,28 @@ Full checklist: [MIGRATION.md](MIGRATION.md).
 
 ## Run locally
 
-**Use a local server** so images load correctly (some browsers block images when opening HTML via `file://`):
+The site uses **Jekyll** with the **[Cayman](https://github.com/pages-themes/cayman)** theme (`remote_theme: pages-themes/cayman`). Shared chrome is in [`_layouts/default.html`](_layouts/default.html) and [`_includes/`](_includes/). Extra rules live in [`assets/nology-custom.css`](assets/nology-custom.css) (nav strip, game grid, compact game headers).
 
 ```bash
-python3 -m http.server 8000
+bundle install
+bundle exec jekyll serve
 ```
 
-Then visit http://localhost:8000
+Open **http://127.0.0.1:4000/Nology-Games/** (Jekyll serves under `baseurl`; there is nothing at `http://127.0.0.1:4000/book.html`). Example: **http://127.0.0.1:4000/Nology-Games/book.html**.
+
+**If the page looks unstyled:** check DevTools → Network → `assets/css/style.css` and `nology-custom.css` (both **200**). Use `jekyll serve` at **`http://127.0.0.1:4000/Nology-Games/`** (see [`_config.yml`](_config.yml) `baseurl`).
+
+To build static output only:
+
+```bash
+bundle exec jekyll build
+python3 -m http.server 4001 --directory _site
+# open http://localhost:4001/book.html
+```
 
 ## GitHub Pages
 
-To publish: **Settings → Pages** → Source: deploy from branch → main (root). The site will be at `https://<user-or-org>.github.io/Nology-Games/`.
+**Settings → Pages** → deploy from branch **main** / **root**. GitHub will run Jekyll automatically. The site URL is `https://<user-or-org>.github.io/Nology-Games/` — relative `assets/` and `images/` links resolve under that path automatically.
 
 ## Adding game installers
 
