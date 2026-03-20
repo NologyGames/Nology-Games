@@ -1,1 +1,4 @@
 <p class="site-footer-nology">Nology Games — former game studio from Brazil. All games free to download.</p>
+{% if site.github.is_project_page %}
+<p class="site-footer-github"><a href="{{ site.github.repository_url }}">View repository on GitHub</a></p>
+{% endif %}

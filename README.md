@@ -17,7 +17,7 @@ Full checklist: [MIGRATION.md](MIGRATION.md).
 
 ## Run locally
 
-The site uses **Jekyll** with the **[Cayman](https://github.com/pages-themes/cayman)** theme (`remote_theme: pages-themes/cayman`). Shared chrome is in [`_layouts/default.html`](_layouts/default.html) and [`_includes/`](_includes/). Extra rules live in [`assets/nology-custom.css`](assets/nology-custom.css) (nav strip, game grid, compact game headers).
+The site uses **Jekyll** with the **[Slate](https://github.com/pages-themes/slate)** theme (`remote_theme: pages-themes/slate`) — dark header, light content band. Shared chrome is in [`_layouts/default.html`](_layouts/default.html) and [`_includes/`](_includes/). Overrides are in [`assets/nology-custom.css`](assets/nology-custom.css).
 
 ```bash
 bundle install
@@ -26,7 +26,7 @@ bundle exec jekyll serve
 
 Open **http://127.0.0.1:4000/Nology-Games/** (Jekyll serves under `baseurl`; there is nothing at `http://127.0.0.1:4000/book.html`). Example: **http://127.0.0.1:4000/Nology-Games/book.html**.
 
-**If the page looks unstyled:** check DevTools → Network → `assets/css/style.css` and `nology-custom.css` (both **200**). Use `jekyll serve` at **`http://127.0.0.1:4000/Nology-Games/`** (see [`_config.yml`](_config.yml) `baseurl`).
+**If the page looks unstyled:** check DevTools → Network → `assets/css/style.css` and `nology-custom.css` (both **200**). Use `jekyll serve` at **`http://127.0.0.1:4000/Nology-Games/`** (`baseurl` in [`_config.yml`](_config.yml)).
 
 To build static output only:
 
