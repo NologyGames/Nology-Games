@@ -90,28 +90,79 @@ img {
 }
 
 .game-media {
-  margin: 1rem 0 1.25rem 0;
+  margin: 1.25rem 0 1.5rem 0;
+}
+
+.game-row {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.game-media-block {
+  min-width: 0;
+}
+
+.game-media-block .game-media {
+  margin: 0;
+}
+
+.game-text {
+  min-width: 0;
 }
 
 .game-grid {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 240px 1fr;
   gap: 1rem;
   align-items: start;
 }
 
 .game-logo {
-  margin: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 200px;
+}
+
+.game-left-card {
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  padding: 0.9rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .game-right {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+
+.game-right-card {
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  padding: 0.9rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
 }
 
 .game-shot {
   margin: 0;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  border: 1px solid #ededed;
+  border-radius: 10px;
+  background: #fff;
+  padding: 0.25rem;
+  max-height: 260px;
 }
 
 .game-right img {
@@ -137,16 +188,28 @@ img {
     grid-template-columns: 320px 1fr;
     align-items: center;
   }
-
-  .game-grid {
-    grid-template-columns: 320px 1fr;
-  }
 }
 
 @media (max-width: 719px) {
+  .game-row {
+    grid-template-columns: 1fr;
+  }
+
   .game-grid {
     grid-template-columns: 1fr;
   }
+
+  .game-logo {
+    max-height: none;
+  }
+
+  .game-shot {
+    max-height: none;
+  }
+}
+
+@media (max-width: 900px) {
+  /* no-op; kept to avoid removing a historical breakpoint */
 }
 
 .team-row {
@@ -191,4 +254,50 @@ footer {
   border-top: 1px solid #ddd;
   font-size: 0.85rem;
   color: #666;
+}
+
+/* Game page: logo header + 60/40 text/screens layout */
+.game-page {
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.game-header {
+  margin: 0 0 1.25rem 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.game-title-logo {
+  display: block;
+  max-width: 320px;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+.game-body-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr; /* 60% / 40% */
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.game-screens {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.game-screens .game-shot {
+  max-height: 360px;
+}
+
+@media (max-width: 820px) {
+  .game-body-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-title-logo {
+    max-width: 100%;
+  }
 }
