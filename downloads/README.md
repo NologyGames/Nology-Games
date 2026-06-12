@@ -9,4 +9,8 @@ Installer files in this folder (with `Nology-` prefix):
 - `Nology-KokoArenaSetup.exe`
 - `Nology-SPMSetup.exe`
 
-The [Downloads](../downloads.html) page links to these files so they can be served from GitHub Pages.
+Book supplementary materials:
+
+- `DesenvJogosEletronicos_VCExpress.zip` — linked from the [Book](../book.html) page as *Book exercises files in Visual C++ Express*
+
+The [Downloads](../downloads.html) page links to the game installers so they can be served from GitHub Pages.
